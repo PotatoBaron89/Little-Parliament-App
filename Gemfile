@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
