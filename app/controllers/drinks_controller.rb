@@ -8,6 +8,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks/1 or /drinks/1.json
   def show
+    render json: @drink
   end
 
   # GET /drinks/new
