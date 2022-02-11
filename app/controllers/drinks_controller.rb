@@ -55,13 +55,13 @@ class DrinksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_drink
     @drink = Drink.find(params[:id])
   end
 
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def drink_params
-    params.require(:drink).permit(:title, :description, :price)
+    params.require(:drink).permit(:title, :description, :price, :image)
   end
 end
