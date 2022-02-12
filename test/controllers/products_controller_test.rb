@@ -2,6 +2,8 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @current_user = users(:one)
+    @current_user.add_role :admin
     @product = products(:one)
   end
 
@@ -17,7 +19,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create product' do
     assert_difference('Product.count') do
-      post products_url, params: { product: { description: @product.description, price: @product.price, title: @product.title } }
+      post products_url, params: { product: { description: 'description here', price: '22.45', title: 'Soaps' } }
     end
 
     assert_redirected_to product_url(Product.last)

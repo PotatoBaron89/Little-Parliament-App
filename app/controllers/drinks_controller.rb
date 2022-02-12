@@ -2,7 +2,7 @@ class DrinksController < ApplicationController
   before_action :check_permissions, only: %i[ create edit update destroy ]
 
   before_action :set_drink, only: %i[ show edit update destroy ]
-  before_action :authenticate_user
+  before_action :authenticate_user, except: %i[ show index ]
 
   # GET /drinks or /drinks.json
   def index

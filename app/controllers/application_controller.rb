@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if @current_user
       true
     else
-      render json: { status: 500 }
+      render json: { status: 500, message: "Unable to authenticate user" }
       false
     end
   end

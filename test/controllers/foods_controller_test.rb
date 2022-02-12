@@ -2,6 +2,8 @@ require "test_helper"
 
 class FoodsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @current_user = users(:one)
+    @current_user.add_role :admin
     @food = foods(:one)
   end
 

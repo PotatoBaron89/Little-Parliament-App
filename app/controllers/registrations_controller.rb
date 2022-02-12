@@ -2,6 +2,7 @@ class RegistrationsController < ApplicationController
   before_action :authenticate_user
 
   def create
+    render json: { msg: "hello"}
     user = User.create!(
       email: params['user']['email'],
       password: params['user']['password']
