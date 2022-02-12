@@ -15,7 +15,7 @@ class FoodsController < ApplicationController
       "title": @food.title,
       "description": @food.description,
       "price": @food.price,
-      "image": Rails.application.routes.url_helpers.rails_blob_path(@food.image, only_path: true)
+      "image": @food.image.url
     }
   end
 
