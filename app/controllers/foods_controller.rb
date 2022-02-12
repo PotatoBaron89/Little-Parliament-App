@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :check_permissions, only: %i[ create edit update destroy ]
+
   before_action :set_food, only: %i[ show edit update destroy ]
   before_action :authenticate_user
 
@@ -61,7 +63,7 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.permit(:title, :description, :price, :image, :category, :meal_category)
+    params.require(:food).permit(:title, :description, :price, :image, :category, :meal_category)
   end
 
 
