@@ -6,18 +6,32 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @food = Food.all
+    response = @food.map do |food|
+      {
+        food: {
+        "title": food.title,
+        "description": food.description,
+        "price": food.price,
+        "image": Rails.env.production? ? food.image.url : "nil",
+        "category": food.category,
+        "meal_category": food.meal_category
+        }
+      }
+    end
+
+    render json: response
   end
 
   # GET /foods/1 or /foods/1.json
   def show
     render json: {
-      "title": @food.title,
-      "description": @food.description,
-      "price": @food.price,
-      "image": @food.image.url,
-      "category": @food.category,
-      "meal_category": @food.meal_category
+      "title": @product.title,
+      "description": @product.description,
+      "price": @product.price,
+      "image": @product.image.url,
+      "category": @product.category,
+      "meal_category": @product.meal_category
     }
   end
 
