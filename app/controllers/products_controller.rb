@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
     response = @products.map do |product|
       {
-        food: {
+        product: {
           "title": product.title,
           "description": product.description,
           "price": product.price,
