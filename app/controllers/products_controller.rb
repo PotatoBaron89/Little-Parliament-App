@@ -11,6 +11,13 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    render json: {
+      "title": @product.title,
+      "description": @product.description,
+      "price": @product.price,
+      "image": @product.image.url,
+      "sale_percent": @product.sale_percent
+    }
   end
 
   # GET /products/new
