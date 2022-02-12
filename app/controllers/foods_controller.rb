@@ -10,12 +10,13 @@ class FoodsController < ApplicationController
     response = @food.map do |food|
       {
         food: {
-        "title": food.title,
-        "description": food.description,
-        "price": food.price,
-        "image": Rails.env.production? ? food.image.url : "nil",
-        "category": food.category,
-        "meal_category": food.meal_category
+          "id": food.id,
+          "title": food.title,
+          "description": food.description,
+          "price": food.price,
+          "image": Rails.env.production? ? food.image.url : "nil",
+          "category": food.category,
+          "meal_category": food.meal_category
         }
       }
     end
