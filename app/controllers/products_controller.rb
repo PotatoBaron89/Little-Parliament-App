@@ -7,6 +7,23 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all
+
+    response = @products.map do |product|
+      {
+        food: {
+          "title": product.title,
+          "description": product.description,
+          "price": product.price,
+          "image": Rails.env.production? ? product.image.url : "nil",
+          "sale_percent": product.sale_percent,
+          "sale_price": product.discounted_price,
+          "featured": product.featured,
+          "qty": product.qty
+        }
+      }
+    end
+
+    render json: response
   end
 
   # GET /products/1 or /products/1.json

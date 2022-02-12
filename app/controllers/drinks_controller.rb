@@ -7,6 +7,20 @@ class DrinksController < ApplicationController
   # GET /drinks or /drinks.json
   def index
     @drinks = Drink.all
+
+    response = @drinks.map do |drink|
+      {
+        food: {
+          "title": drink.title,
+          "description": drink.description,
+          "price": drink.price,
+          "image": Rails.env.production? ? drink.image.url : "nil",
+          "category": drink.category
+        }
+      }
+    end
+
+    render json: response
   end
 
   # GET /drinks/1 or /drinks/1.json
