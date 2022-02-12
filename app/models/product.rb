@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   after_initialize :init
 
   has_one_attached :image
+  has_one :order
+
 
   validates_presence_of :title
   validates_uniqueness_of :title
@@ -28,5 +30,6 @@ class Product < ApplicationRecord
   def init
     self.featured ||= false
     self.qty ||= 1
+    self.sale_percent ||= 0
   end
 end

@@ -42,4 +42,10 @@ class ProductTest < ActiveSupport::TestCase
     new_product.price = 2.55
     assert new_product.valid?
   end
+  
+  test 'Default fields filled in if left blank' do
+    new_product = Product.create!(title: 'Test product', price: 29.99)
+    assert new_product.featured == false
+    assert new_product.qty == 1
+  end
 end
