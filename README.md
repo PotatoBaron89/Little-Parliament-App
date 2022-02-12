@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##Endpoints
 
-* Ruby version
+<hr>
 
-* System dependencies
+###*Sessions*
 
-* Configuration
+- #### Login / Create a Session
+`/session` > `POST`
 
-* Database creation
+- #### Check session status
+`/logged_in?` > `GET`
 
-* Database initialization
+- #### Logout / End session
+`/log_out` > `DELETE`
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`registrations` > `POST`

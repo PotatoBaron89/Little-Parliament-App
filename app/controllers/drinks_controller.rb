@@ -11,7 +11,7 @@ class DrinksController < ApplicationController
     response = @drinks.map do |drink|
       {
         food: {
-          "id":drink.id
+          "id":drink.id,
           "title": drink.title,
           "description": drink.description,
           "price": drink.price,

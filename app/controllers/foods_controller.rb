@@ -14,6 +14,7 @@ class FoodsController < ApplicationController
           "title": food.title,
           "description": food.description,
           "price": food.price,
+          # Will break dev and testing without conditional, only prod has uses A3, others use local
           "image": Rails.env.production? ? food.image.url : "nil",
           "category": food.category,
           "meal_category": food.meal_category
