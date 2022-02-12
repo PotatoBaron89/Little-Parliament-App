@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+  resources :orders
 	resources :sessions, only: [:create, :logged_in]
 	resources :registrations, only: [:create]
 
