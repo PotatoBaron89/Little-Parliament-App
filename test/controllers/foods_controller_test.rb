@@ -18,6 +18,9 @@ class FoodsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create food" do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     assert_difference('Food.count') do
       post foods_url, params: { food: { description: @food.description, price: @food.price, title: @food.title } }
     end
@@ -31,16 +34,25 @@ class FoodsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     get edit_food_url(@food)
     assert_response :success
   end
 
   test "should update food" do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     patch food_url(@food), params: { food: { description: @food.description, price: @food.price, title: @food.title } }
     assert_redirected_to food_url(@food)
   end
 
   test "should destroy food" do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     assert_difference('Food.count', -1) do
       delete food_url(@food)
     end

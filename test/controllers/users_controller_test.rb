@@ -18,7 +18,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      binding.irb
       post registrations_url, params: { user: { email: 'potato@somewhere.com', password_digest: 'password' } }
     end
   end

@@ -2,8 +2,6 @@ require 'test_helper'
 
 class DrinksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @current_user = users(:one)
-    @current_user.add_role :admin
     @drink = drinks(:one)
   end
 
@@ -18,6 +16,9 @@ class DrinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create drink' do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     assert_difference('Drink.count') do
       post drinks_url, params: { drink: { description: @drink.description, price: @drink.price, title: @drink.title } }
     end
@@ -36,17 +37,20 @@ class DrinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update drink' do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     patch drink_url(@drink), params: { drink: { description: @drink.description, price: @drink.price, title: @drink.title } }
     assert_response :success
   end
 
   test 'should destroy drink' do
+    @current_user = users(:one)
+    @current_user.add_role :admin
+
     assert_difference('Drink.count', -1) do
       delete drink_url(@drink)
     end
 
-    assert_redirected_to drinks_url
   end
-  
-
 end
