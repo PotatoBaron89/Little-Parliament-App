@@ -11,7 +11,13 @@ class DrinksController < ApplicationController
 
   # GET /drinks/1 or /drinks/1.json
   def show
-    render json: @drink
+    render json: {
+      "title": @drink.title,
+      "description": @drink.description,
+      "price": @drink.price,
+      "image": @drink.image.url,
+      "category": @drink.category
+    }
   end
 
   # GET /drinks/new

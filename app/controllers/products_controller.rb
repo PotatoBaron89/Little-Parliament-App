@@ -16,7 +16,10 @@ class ProductsController < ApplicationController
       "description": @product.description,
       "price": @product.price,
       "image": @product.image.url,
-      "sale_percent": @product.sale_percent
+      "sale_percent": @product.sale_percent,
+      "sale_price": @product.discounted_price,
+      "featured": @product.featured,
+      "qty": @product.qty
     }
   end
 

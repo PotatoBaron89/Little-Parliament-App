@@ -15,7 +15,9 @@ class FoodsController < ApplicationController
       "title": @food.title,
       "description": @food.description,
       "price": @food.price,
-      "image": @food.image.url
+      "image": @food.image.url,
+      "category": @food.category,
+      "meal_category": @food.meal_category
     }
   end
 
@@ -69,7 +71,7 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.permit(:title, :description, :price, :image, :category, :meal_category)
+    params.require(:food).permit(:title, :description, :price, :image, :category, :meal_category)
   end
 
 
