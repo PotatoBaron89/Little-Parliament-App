@@ -35,4 +35,11 @@ class ProductTest < ActiveSupport::TestCase
     new_product = Product.new(title: 'Priceless Product', description: 'Too good to put a price on')
     assert_not new_product.valid?
   end
+
+  test 'Price cannot be negative' do
+    new_product = Product.new(title: 'Latte', price: -2.55)
+    assert_not new_product.valid?
+    new_product.price = 2.55
+    assert new_product.valid?
+  end
 end

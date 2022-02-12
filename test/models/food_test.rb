@@ -35,4 +35,11 @@ class FoodTest < ActiveSupport::TestCase
     new_food = Food.new(title: 'Priceless Food', description: 'Too good to put a price on')
     assert_not new_food.valid?
   end
+
+  test 'Price cannot be negative' do
+    new_food = Food.new(title: 'Raisin Toast', price: -2.55)
+    assert_not new_food.valid?
+    new_food.price = 2.55
+    assert new_food.valid?
+  end
 end

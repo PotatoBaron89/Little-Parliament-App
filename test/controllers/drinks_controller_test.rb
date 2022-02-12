@@ -45,4 +45,6 @@ class DrinksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to drinks_url
   end
+  
+
 end

@@ -35,4 +35,11 @@ class DrinkTest < ActiveSupport::TestCase
     new_drink = Drink.new(title: 'Priceless Drink', description: 'Too good to put a price on')
     assert_not new_drink.valid?
   end
+
+  test 'Price cannot be negative' do
+    new_drink = Drink.new(title: 'Latte', price: -2.55)
+    assert_not new_drink.valid?
+    new_drink.price = 2.55
+    assert new_drink.valid?
+  end
 end
