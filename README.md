@@ -17,4 +17,8 @@
 `/log_out` > `DELETE`
 
 
-`registrations` > `POST`
+###*Registration and Users*
+
+- #### Create new users
+
+`registrations` > `POST` 
