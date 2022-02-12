@@ -1,21 +1,21 @@
-require "test_helper"
+require 'test_helper'
 
 class DrinksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @drink = drinks(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get drinks_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_drink_url
     assert_response :success
   end
 
-  test "should create drink" do
+  test 'should create drink' do
     assert_difference('Drink.count') do
       post drinks_url, params: { drink: { description: @drink.description, price: @drink.price, title: @drink.title } }
     end
@@ -23,22 +23,22 @@ class DrinksControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to drink_url(Drink.last)
   end
 
-  test "should show drink" do
+  test 'should show drink' do
     get drink_url(@drink)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_drink_url(@drink)
     assert_response :success
   end
 
-  test "should update drink" do
+  test 'should update drink' do
     patch drink_url(@drink), params: { drink: { description: @drink.description, price: @drink.price, title: @drink.title } }
-    assert_redirected_to drink_url(@drink)
+    assert_response :success
   end
 
-  test "should destroy drink" do
+  test 'should destroy drink' do
     assert_difference('Drink.count', -1) do
       delete drink_url(@drink)
     end
