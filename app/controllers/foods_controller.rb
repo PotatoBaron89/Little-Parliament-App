@@ -1,10 +1,10 @@
 class FoodsController < ApplicationController
-  before_action :check_permissions, only: %i[ create edit update destroy ]
+  before_action :check_permissions, only: %i[ create edit update destroy ]    # check if user is an admin
 
-  before_action :set_food, only: %i[ show edit update destroy ]
-  before_action :authenticate_user, except: %i[ show index ]
+  before_action :set_food, only: %i[ show edit update destroy ]               # set @food based on param
+  before_action :authenticate_user, except: %i[ show index ]                  # check if user has a session
 
-  # GET /foods or /foods.json
+  # GET /foods or /foods.json, returns array of objects in json
   def index
     @food = Food.all
     response = @food.map do |food|
@@ -38,16 +38,7 @@ class FoodsController < ApplicationController
     }
   end
 
-  # GET /foods/new
-  def new
-    @food = Food.new
-  end
-
-  # GET /foods/1/edit
-  def edit
-  end
-
-  # POST /foods or /foods.json
+  # POST /foods or /foods.json, creates a new Product item
   def create
     @food = Food.new(food_params)
 
@@ -60,7 +51,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /foods/1 or /foods/1.json
+  # PATCH/PUT /foods/1 or /foods/1.json, updates an existing food item
   def update
     respond_to do |format|
       if @food.update(food_params)
@@ -71,7 +62,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1 or /foods/1.json
+  # DELETE /foods/1 or /foods/1.json, deletes an existing food item
   def destroy
     @food.destroy
 

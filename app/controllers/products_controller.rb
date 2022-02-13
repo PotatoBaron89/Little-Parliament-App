@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
-  before_action :check_permissions, only: %i[ create edit update destroy ]
+  before_action :check_permissions, only: %i[ create edit update destroy ]    # check if user is an admin
 
-  before_action :set_product, only: %i[ show edit update destroy ]
-  before_action :authenticate_user, except: %i[ show index ]
+  before_action :set_product, only: %i[ show edit update destroy ]            # set @product based on param
+  before_action :authenticate_user, except: %i[ show index ]                  # check if user has a session
 
-  # GET /products or /products.json
+  # GET /products or /products.json, returns array of objects in json
   def index
     @products = Product.all
 
@@ -42,16 +42,7 @@ class ProductsController < ApplicationController
     }
   end
 
-  # GET /products/new
-  def new
-    @product = Product.new
-  end
-
-  # GET /products/1/edit
-  def edit
-  end
-
-  # POST /products or /products.json
+  # POST /products or /products.json, creates a new Product item
   def create
     @product = Product.new(product_params)
 
@@ -64,20 +55,18 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+  # PATCH/PUT /products/1 or /products/1.json updates existing product item
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /products/1 or /products/1.json
+  # DELETE /products/1 or /products/1.json deletes an existing item
   def destroy
     @product.destroy
 

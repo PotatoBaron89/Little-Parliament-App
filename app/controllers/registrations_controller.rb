@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
 
+  # Allow a new user to be created
   def create
     render json: { msg: "hello"}
     user = User.create!(
@@ -14,7 +15,8 @@ class RegistrationsController < ApplicationController
         user: user
       }
     else
-      render json: { status: 500, message: "Failed to authenticate user" }
+      # Handle failed attempt at creating a new user
+      render json: { status: 500, message: user.errors }
     end
   end
 end

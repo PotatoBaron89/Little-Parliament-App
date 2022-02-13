@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  # This section is a word in progress, endpoints are currently blocked
+  # until development of this section continues.
+
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :authenticate_user, except: %i[ show index ]
 

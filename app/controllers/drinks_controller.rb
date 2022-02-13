@@ -1,10 +1,10 @@
 class DrinksController < ApplicationController
-  before_action :check_permissions, only: %i[ create edit update destroy ]
+  before_action :check_permissions, only: %i[ create edit update destroy ]  # check if user is an admin
 
-  before_action :set_drink, only: %i[ show edit update destroy ]
-  before_action :authenticate_user, except: %i[ show index ]
+  before_action :set_drink, only: %i[ show edit update destroy ]            # set @drink based on param
+  before_action :authenticate_user, except: %i[ show index ]                # check if user has a session
 
-  # GET /drinks or /drinks.json
+  # GET /drinks or /drinks.json, returns array of objects in json
   def index
     @drinks = Drink.all
 
@@ -36,16 +36,7 @@ class DrinksController < ApplicationController
     }
   end
 
-  # GET /drinks/new
-  def new
-    @drink = Drink.new
-  end
-
-  # GET /drinks/1/edit
-  def edit
-  end
-
-  # POST /drinks or /drinks.json
+  # POST /drinks or /drinks.json, creates a new Drink item
   def create
     @drink = Drink.new(drink_params)
 
@@ -58,7 +49,7 @@ class DrinksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /drinks/1 or /drinks/1.json
+  # PATCH/PUT /drinks/1 or /drinks/1.json, updates an existing drink item
   def update
     respond_to do |format|
       if @drink.update(drink_params)
@@ -69,7 +60,7 @@ class DrinksController < ApplicationController
     end
   end
 
-  # DELETE /drinks/1 or /drinks/1.json
+  # DELETE /drinks/1 or /drinks/1.json, destroys an existing drinks item
   def destroy
     @drink.destroy
 

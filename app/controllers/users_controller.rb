@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action :check_permissions
+  # Admin only endpoint, /users
 
-  before_action :set_user, only: %i[ show edit update destroy ]
-  before_action :authenticate_user
+  before_action :check_permissions # check the user is an admin
+
+  before_action :set_user, only: %i[ show edit update destroy ]  # set the @user based on params, eg user/12
+  before_action :authenticate_user            # verify users session is valid
 
   # Only admins can interact with this endpoint
   # GET /users or /users.json
@@ -14,16 +16,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
-  end
-
-  # POST /users or /users.json
+  # POST /users or /users.json  Allow admin to create new user manually
   def create
     @user = User.new(user_params)
 
@@ -36,7 +29,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
+  # PATCH/PUT /users/1 or /users/1.json, allow an admin to update an existing user
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -47,7 +40,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1 or /users/1.json
+  # DELETE /users/1 or /users/1.json, allow an admin to delete a current user
   def destroy
     @user.destroy
 
