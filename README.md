@@ -161,7 +161,8 @@ Requires `email` and `password` parameters
 ![Trello 2](https://user-images.githubusercontent.com/80095448/153744903-2e1bf311-0063-45cd-bb4d-8f3892235985.PNG)
 ![Trello 3](https://user-images.githubusercontent.com/80095448/153744905-40ff6761-c0db-42e5-9486-71fb01a201ff.PNG)
 ![Trello 4](https://user-images.githubusercontent.com/80095448/153744907-4d776190-c132-4385-adee-587223bbc660.PNG)
-![Jira 1](https://user-images.githubusercontent.com/80095448/153744909-328467c4-0ed7-4895-9318-c5388e78d66b.PNG)
+![Jira 1](https://user-images.githubusercontent.com/80095448/153744982-b2ae1567-6878-4542-8b78-c01d2238440a.png)
+![Jira 2](https://user-images.githubusercontent.com/80095448/153744909-328467c4-0ed7-4895-9318-c5388e78d66b.PNG)
   
   
   
