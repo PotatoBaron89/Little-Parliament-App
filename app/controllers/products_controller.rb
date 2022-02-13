@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
     response = @products.map do |product|
       {
         product: {
+          "id": product.id,
           "title": product.title,
           "description": product.description,
           "price": product.price,
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/1 or /products/1.json
   def show
     render json: {
-      "id": product.id,
+      "id": @product.id,
       "title": @product.title,
       "description": @product.description,
       "price": @product.price,

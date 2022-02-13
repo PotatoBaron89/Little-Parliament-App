@@ -28,10 +28,11 @@ class FoodsController < ApplicationController
   # GET /foods/1 or /foods/1.json
   def show
     render json: {
+      "id": @food.id,
       "title": @food.title,
       "description": @food.description,
       "price": @food.price,
-      "image": @food.image.url,
+      "image": Rails.env.production? ? @food.image.url : "nil",
       "category": @food.category,
       "meal_category": @food.meal_category
     }

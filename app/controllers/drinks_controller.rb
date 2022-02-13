@@ -27,6 +27,7 @@ class DrinksController < ApplicationController
   # GET /drinks/1 or /drinks/1.json
   def show
     render json: {
+      "id": @drink.id,
       "title": @drink.title,
       "description": @drink.description,
       "price": @drink.price,
