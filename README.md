@@ -5,10 +5,10 @@
 
 <hr>
 
-####*Server Status*
+#### *Server Status*
 `/status`
 
-###*Sessions*
+### *Sessions*
 
 - #### Login / Create a Session
 `/session` > `POST`
