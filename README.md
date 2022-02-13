@@ -5,10 +5,10 @@
 
 <hr>
 
-####*Server Status*
+#### *Server Status*
 `/status`
 
-###*Sessions*
+### *Sessions*
 
 - #### Login / Create a Session
 `/session` > `POST`
@@ -46,7 +46,7 @@ Requires `email` and `password` parameters
 `/users` > `PATCH`
 Requires `email` and `password` parameters
 
-- #### Edit user
+- #### Delete user
 **Use with caution.**
 
 `/users/user_id.json` > `DELETE`
