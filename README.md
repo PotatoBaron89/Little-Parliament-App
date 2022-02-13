@@ -1,5 +1,31 @@
 # README
 
+**Frontend Github**: https://laughing-fermat-5d3da8.netlify.app/
+**Backend Server Github**: https://gentle-fortress-16563.herokuapp.com/
+
+
+
+  
+    ## Part 2 Planning
+    
+    ###Breakdown
+    
+    Sam you are in charge of handling the frontend since you are pretty proficient with Rails and have less experience with React.
+    Axel and Tia are colloborating on the frontend, since there is more work to do there and we want to prioritise creating a very high quality product for the user. 
+    
+    ### Notes
+    
+    - Breakdown of tasks in https://trello.com/b/1glz1Gcf/t3a2-fullstack, sued for larger scope issues.  Make sure we are tagging each other as necessary and linking to commits with relevant changes so that we can traceback issues if necessary.
+    - More detailed tickets are handled on Jira, https://littleparliament.atlassian.net/jira/core/projects/LIT/board
+
+### Screenshots of Planning
+![Trello 1](https://user-images.githubusercontent.com/80095448/153744901-7710d1b2-d202-4ea4-87e8-4e48d36a2e67.PNG)
+![Trello 2](https://user-images.githubusercontent.com/80095448/153744903-2e1bf311-0063-45cd-bb4d-8f3892235985.PNG)
+![Trello 3](https://user-images.githubusercontent.com/80095448/153744905-40ff6761-c0db-42e5-9486-71fb01a201ff.PNG)
+![Trello 4](https://user-images.githubusercontent.com/80095448/153744907-4d776190-c132-4385-adee-587223bbc660.PNG)
+![Jira 1](https://user-images.githubusercontent.com/80095448/153744982-b2ae1567-6878-4542-8b78-c01d2238440a.png)
+![Jira 2](https://user-images.githubusercontent.com/80095448/153744909-328467c4-0ed7-4895-9318-c5388e78d66b.PNG)
+
 
 
 
@@ -41,7 +67,7 @@ Requires `email` and `password` parameters
 
 - #### Create new users
 
-`/users` > `POST` 
+`/users` > `POST`
 Requires `email` and `password` parameters
 
 - #### Edit user
@@ -139,55 +165,31 @@ Requires `email` and `password` parameters
 ## Gems Used
 
 - **PG**
-  - The gem for handling postgres database, which handles alll of our storage.
+    - The gem for handling postgres database, which handles alll of our storage.
 - **Bcrypt**
-  - Bcrypt is used to hash / salt passwords and any other senstive data.
+    - Bcrypt is used to hash / salt passwords and any other senstive data.
 - **Rack-cors**
-  - Necessary for our API, allows web applications to make cross domain AJAX calls.
+    - Necessary for our API, allows web applications to make cross domain AJAX calls.
 - **AWS-SDK-S3**
-  - Necessary for file hosting to S3, used in tandem with ActiveRecord. Allows us to easy upload files to an AWS S3 buckeet.
+    - Necessary for file hosting to S3, used in tandem with ActiveRecord. Allows us to easy upload files to an AWS S3 buckeet.
 - **Rolify**
-  - Used to handle the creation of user roles.  Currently planned to have guests, registered users and admins.  Yet to be fully implemented.
+    - Used to handle the creation of user roles.  Currently planned to have guests, registered users and admins.  Yet to be fully implemented.
 - **Pundit**
-  - Used to handle authentication, currently in the process of switching over from a custom setup to the more robust system that Pundit provides.
+    - Used to handle authentication, currently in the process of switching over from a custom setup to the more robust system that Pundit provides.
 - **Dotenv-rails**
     - Allows us to use .env files withion our rails app.
 - **Better Errors**
-  - Provides a far more useful debugging tool, whilst far less useful with an API application it still comes in useful from time to time.
+    - Provides a far more useful debugging tool, whilst far less useful with an API application it still comes in useful from time to time.
 - **Pry**
-  - Another debugging tool, similar to `irb` but with more features and capabilities.
+    - Another debugging tool, similar to `irb` but with more features and capabilities.
 - **Amazing Print**
-  - Another useful dev tool that is similar to using `puts` but displays far more readable text. Very handy for when you have to parse server logs.
-  
-  
-  
+    - Another useful dev tool that is similar to using `puts` but displays far more readable text. Very handy for when you have to parse server logs.
 
-  
-    ## Part 2 Planning
-    
-    ###Breakdown
-    
-    Sam you are in charge of handling the frontend since you are pretty proficient with Rails and have less experience with React.
-    Axel and Tia are colloborating on the frontend, since there is more work to do there and we want to prioritise creating a very high quality product for the user. 
-    
-    ### Notes
-    
-    - Breakdown of tasks in https://trello.com/b/1glz1Gcf/t3a2-fullstack, sued for larger scope issues.  Make sure we are tagging each other as necessary and linking to commits with relevant changes so that we can traceback issues if necessary.
-    - More detailed tickets are handled on Jira, https://littleparliament.atlassian.net/jira/core/projects/LIT/board
 
-### Screenshots of Planning
-![Trello 1](https://user-images.githubusercontent.com/80095448/153744901-7710d1b2-d202-4ea4-87e8-4e48d36a2e67.PNG)
-![Trello 2](https://user-images.githubusercontent.com/80095448/153744903-2e1bf311-0063-45cd-bb4d-8f3892235985.PNG)
-![Trello 3](https://user-images.githubusercontent.com/80095448/153744905-40ff6761-c0db-42e5-9486-71fb01a201ff.PNG)
-![Trello 4](https://user-images.githubusercontent.com/80095448/153744907-4d776190-c132-4385-adee-587223bbc660.PNG)
-![Jira 1](https://user-images.githubusercontent.com/80095448/153744982-b2ae1567-6878-4542-8b78-c01d2238440a.png)
-![Jira 2](https://user-images.githubusercontent.com/80095448/153744909-328467c4-0ed7-4895-9318-c5388e78d66b.PNG)
-  
-  
-  
-  
-  
-  # T3A2-A Full Stack Application 
+
+
+
+# T3A2-A Full Stack Application 
 # Axel Whitford / Sam O'Donnell / Tia Koenig
 
 # Desciption of Website
