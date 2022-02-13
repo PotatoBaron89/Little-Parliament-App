@@ -5,6 +5,9 @@
 
 <hr>
 
+####*Server Status*
+`/status`
+
 ###*Sessions*
 
 - #### Login / Create a Session
@@ -66,6 +69,7 @@ Requires `email` and `password` parameters
     "title": Required, must be unique
     "description": optional
     "price": Required, must be positive int
+    "image": optional: returns a url, when posting it must be a file, not a url
     "category": default: any breakfast lunch dinner
     "meal_category": vegan vegetarian default: standard
 ```
@@ -74,6 +78,7 @@ Requires `email` and `password` parameters
 ```json
     "title": Required, must be unique
     "description": optional
+    "image": optional: returns a url, when posting it must be a file, not a url
     "price": Required, must be positive int
     "category": (optional) cold hold alcholol
 ```
@@ -83,6 +88,7 @@ Requires `email` and `password` parameters
     "title": Required, must be unique
     "description": optional
     "price": Required, must be positive int
+    "image": optional: returns a url, when posting it must be a file, not a url
     "featured": (default) false
     "qty": (default, 1)
     "sale_percent": default 0. Must be a whole, eg 30% would be 30, not (.3)
@@ -124,3 +130,28 @@ Requires `email` and `password` parameters
 /drinks/drink_id.json` > 'DELETE'
 /products/product_id.json` > 'DELETE'
 ```
+
+
+## Gems Used
+
+- **PG**
+  - The gem for handling postgres database, which handles alll of our storage.
+- **Bcrypt**
+  - Bcrypt is used to hash / salt passwords and any other senstive data.
+- **Rack-cors**
+  - Necessary for our API, allows web applications to make cross domain AJAX calls.
+- **AWS-SDK-S3**
+  - Necessary for file hosting to S3, used in tandem with ActiveRecord. Allows us to easy upload files to an AWS S3 buckeet.
+- **Rolify**
+  - Used to handle the creation of user roles.  Currently planned to have guests, registered users and admins.  Yet to be fully implemented.
+- **Pundit**
+  - Used to handle authentication, currently in the process of switching over from a custom setup to the more robust system that Pundit provides.
+- **Dotenv-rails**
+    - Allows us to use .env files withion our rails app.
+- **Better Errors**
+  - Provides a far more useful debugging tool, whilst far less useful with an API application it still comes in useful from time to time.
+- **Pry**
+  - Another debugging tool, similar to `irb` but with more features and capabilities.
+- **Amazing Print**
+  - Another useful dev tool that is similar to using `puts` but displays far more readable text. Very handy for when you have to parse server logs.
+  
