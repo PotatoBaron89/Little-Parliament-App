@@ -1,6 +1,10 @@
 # README
 
 
+
+
+
+
 ## Endpoints
 
 <hr>
@@ -156,7 +160,22 @@ Requires `email` and `password` parameters
   - Another useful dev tool that is similar to using `puts` but displays far more readable text. Very handy for when you have to parse server logs.
   
   
+  
+
+  
     ## Part 2 Planning
+    
+    ###Breakdown
+    
+    Sam you are in charge of handling the frontend since you are pretty proficient with Rails and have less experience with React.
+    Axel and Tia are colloborating on the frontend, since there is more work to do there and we want to prioritise creating a very high quality product for the user. 
+    
+    ### Notes
+    
+    - Breakdown of tasks in https://trello.com/b/1glz1Gcf/t3a2-fullstack, sued for larger scope issues.  Make sure we are tagging each other as necessary and linking to commits with relevant changes so that we can traceback issues if necessary.
+    - More detailed tickets are handled on Jira, https://littleparliament.atlassian.net/jira/core/projects/LIT/board
+
+### Screenshots of Planning
 ![Trello 1](https://user-images.githubusercontent.com/80095448/153744901-7710d1b2-d202-4ea4-87e8-4e48d36a2e67.PNG)
 ![Trello 2](https://user-images.githubusercontent.com/80095448/153744903-2e1bf311-0063-45cd-bb4d-8f3892235985.PNG)
 ![Trello 3](https://user-images.githubusercontent.com/80095448/153744905-40ff6761-c0db-42e5-9486-71fb01a201ff.PNG)
